@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fairuz Mubashwera — Academic Homepage</title>
+<meta name="description" content="Fairuz Mubashwera — Lecturer in CSE at Presidency University. Research in privacy-preserving and trustworthy machine learning: Vertical Federated Learning security, machine unlearning, and autonomous-vehicle testing.">
+
+<!-- Fonts: Newsreader (display serif) + Inter (body/utility) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1a1d24;          /* near-black text */
+    --ink-soft:#4a4f5a;     /* secondary text */
+    --ink-faint:#767c88;    /* captions, meta  */
+    --accent:#1f3d6e;       /* deep academic ink-blue */
+    --accent-soft:#e8edf5;  /* tint for chips/hover */
+    --rule:#e2e2dd;         /* hairline dividers */
+    --paper:#fbfaf7;        /* warm off-white page */
+    --card:#ffffff;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;text-underline-offset:2px;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- Layout: sidebar + content ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:56px;
+    padding:64px 0 80px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{position:relative;}
+  .sidebar-inner{position:sticky;top:48px;}
+  .avatar{
+    width:150px;height:150px;border-radius:4px;
+    background:linear-gradient(150deg,#25467d,#1f3d6e 55%,#16294b);
+    display:flex;align-items:center;justify-content:center;
+    color:#dfe7f4;font-family:"Newsreader",serif;font-size:52px;font-weight:500;
+    letter-spacing:1px;margin-bottom:20px;
+    box-shadow:0 1px 0 rgba(0,0,0,.04);
+  }
+  .name{
+    font-family:"Newsreader",serif;
+    font-size:29px;line-height:1.15;font-weight:600;
+    margin:0 0 6px;letter-spacing:-.01em;
+  }
+  .role{font-size:15px;color:var(--ink-soft);margin:0 0 2px;}
+  .affil{font-size:15px;color:var(--ink-soft);margin:0 0 18px;}
+  .affil a{color:var(--ink-soft);border-bottom:1px solid var(--rule);}
+  .affil a:hover{color:var(--accent);text-decoration:none;border-color:var(--accent);}
+
+  .contact-list{list-style:none;padding:0;margin:0 0 22px;font-size:14.5px;}
+  .contact-list li{display:flex;gap:10px;margin-bottom:7px;color:var(--ink-soft);align-items:baseline;}
+  .contact-list .ic{color:var(--accent);width:16px;flex:none;font-size:13px;}
+  .contact-list a{color:var(--ink-soft);}
+  .contact-list a:hover{color:var(--accent);}
+
+  .cv-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);color:#fff;
+    font-size:14.5px;font-weight:500;
+    padding:10px 18px;border-radius:4px;
+    transition:background .15s ease;
+  }
+  .cv-btn:hover{background:#16294b;text-decoration:none;color:#fff;}
+
+  /* ---------- Content ---------- */
+  .content{min-width:0;}
+
+  section{margin-bottom:44px;scroll-margin-top:28px;}
+  section:last-child{margin-bottom:0;}
+
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);
+    margin:0 0 14px;display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--rule);}
+
+  h2.blocktitle{  /* not used for section head; reserved */
+    font-family:"Newsreader",serif;
+  }
+
+  .lead{
+    font-family:"Newsreader",serif;
+    font-size:20px;line-height:1.5;color:var(--ink);
+    margin:0 0 16px;font-weight:400;
+  }
+  p{margin:0 0 14px;color:var(--ink-soft);}
+  .content p strong{color:var(--ink);font-weight:600;}
+
+  /* Interests chips */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+  .chip{
+    font-size:13.5px;color:var(--accent);
+    background:var(--accent-soft);
+    padding:6px 12px;border-radius:3px;font-weight:500;
+  }
+
+  /* Timeline entries (research / education / experience) */
+  .entry{
+    padding:16px 0;border-top:1px solid var(--rule);
+  }
+  .entry:first-of-type{border-top:none;padding-top:4px;}
+  .entry-head{
+    display:flex;justify-content:space-between;gap:16px;
+    align-items:baseline;flex-wrap:wrap;
+  }
+  .entry-title{
+    font-family:"Newsreader",serif;font-size:18.5px;font-weight:600;
+    color:var(--ink);margin:0;line-height:1.3;
+  }
+  .entry-date{
+    font-size:13.5px;color:var(--ink-faint);white-space:nowrap;
+    font-variant-numeric:tabular-nums;flex:none;
+  }
+  .entry-sub{font-size:14.5px;color:var(--accent);margin:2px 0 8px;font-weight:500;}
+  .entry-sub .muted{color:var(--ink-faint);font-weight:400;}
+  .entry p{margin:0;font-size:15px;}
+  .entry ul{margin:6px 0 0;padding-left:18px;}
+  .entry li{font-size:15px;color:var(--ink-soft);margin-bottom:4px;}
+
+  /* Publications */
+  .pub{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;
+    padding:16px 0;border-top:1px solid var(--rule);
+  }
+  .pub:first-of-type{border-top:none;padding-top:4px;}
+  .pub-num{
+    font-family:"Newsreader",serif;font-size:15px;color:var(--accent);
+    font-weight:600;padding-top:1px;
+  }
+  .pub-title{color:var(--ink);font-weight:600;font-size:15.5px;line-height:1.4;}
+  .pub-meta{font-size:14px;color:var(--ink-soft);margin-top:3px;}
+  .venue{font-style:italic;}
+  .badge{
+    display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.03em;
+    color:#7a5b00;background:#fbf1d3;padding:2px 8px;border-radius:3px;
+    margin-left:6px;vertical-align:middle;text-transform:uppercase;
+  }
+
+  /* Projects grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .proj{
+    background:var(--card);border:1px solid var(--rule);border-radius:5px;
+    padding:18px 20px;transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .proj:hover{border-color:#c9d3e4;box-shadow:0 3px 14px rgba(31,61,110,.06);}
+  .proj h3{
+    font-family:"Newsreader",serif;font-size:17px;font-weight:600;
+    margin:0 0 6px;color:var(--ink);
+  }
+  .proj p{font-size:14px;margin:0 0 10px;}
+  .proj .tag{font-size:12.5px;color:var(--ink-faint);}
+  .proj .award{color:#7a5b00;font-weight:500;}
+
+  /* Awards list */
+  .awards{list-style:none;padding:0;margin:0;}
+  .awards li{
+    padding:11px 0;border-top:1px solid var(--rule);
+    font-size:15px;color:var(--ink-soft);
+    display:grid;grid-template-columns:auto 1fr;gap:12px;
+  }
+  .awards li:first-child{border-top:none;}
+  .awards .yr{
+    font-size:13px;color:var(--ink-faint);font-variant-numeric:tabular-nums;
+    padding-top:2px;white-space:nowrap;
+  }
+  .awards strong{color:var(--ink);font-weight:600;}
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--rule);
+    padding:26px 0 40px;font-size:13.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  footer a{color:var(--ink-faint);}
+  footer a:hover{color:var(--accent);}
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:820px){
+    .layout{grid-template-columns:1fr;gap:36px;padding:40px 0 60px;}
+    .sidebar-inner{position:static;}
+    .avatar{width:96px;height:96px;font-size:34px;margin-bottom:16px;}
+    .name{font-size:26px;}
+    .grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <!-- Replace this initials block with an <img src="profile.jpg" class="avatar"> when you add a photo -->
+      <div class="avatar">FM</div>
+
+      <h1 class="name">Fairuz Mubashwera</h1>
+      <p class="role">Lecturer, Computer Science &amp; Engineering</p>
+      <p class="affil"><a href="#">Presidency University</a>, Dhaka</p>
+
+      <ul class="contact-list">
+        <li><span class="ic">@</span> <a href="mailto:mubashwerafairuz@gmail.com">mubashwerafairuz@gmail.com</a></li>
+        <li><span class="ic">☎</span> +880&nbsp;1799&nbsp;200901</li>
+        <li><span class="ic">◉</span> Dhaka, Bangladesh</li>
+        <li><span class="ic">in</span> <a href="https://linkedin.com/in/Fairuz" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><span class="ic">⌥</span> <a href="https://github.com/Fairuz" target="_blank" rel="noopener">GitHub</a></li>
+        <li><span class="ic">✦</span> <a href="#" target="_blank" rel="noopener">Google&nbsp;Scholar</a></li>
+      </ul>
+
+      <a class="cv-btn" href="cv.pdf" download>
+        <span>↓</span> Download CV (PDF)
+      </a>
+    </div>
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <p class="eyebrow">About</p>
+      <p class="lead">I build machine-learning systems that stay trustworthy when data is private, distributed, and safety-critical.</p>
+      <p>I am a Lecturer in Computer Science and Engineering at Presidency University and a recent B.Sc. graduate of the Bangladesh University of Engineering and Technology (BUET), where I finished with a CGPA of 3.94/4.00. My work sits at the intersection of <strong>privacy-preserving machine learning</strong> and <strong>system reliability</strong>: I study how collaborative learning can leak information, how models can be made to reliably forget, and how autonomous systems can be tested against realistic behavior.</p>
+      <p>I am motivated by problems where technical rigor meets real-world consequence — data confidentiality, algorithmic safety, and equitable access to technology — and I aim to contribute both through research and by building a collaborative academic environment for students.</p>
+    </section>
+
+    <!-- RESEARCH INTERESTS -->
+    <section id="interests">
+      <p class="eyebrow">Research Interests</p>
+      <div class="chips">
+        <span class="chip">Vertical Federated Learning</span>
+        <span class="chip">Privacy &amp; Security in ML</span>
+        <span class="chip">Label Inference Attacks</span>
+        <span class="chip">Machine Unlearning</span>
+        <span class="chip">Trustworthy AI</span>
+        <span class="chip">Autonomous-Vehicle Testing</span>
+        <span class="chip">Simulation &amp; Robustness</span>
+      </div>
+    </section>
+
+    <!-- RESEARCH EXPERIENCE -->
+    <section id="research">
+      <p class="eyebrow">Research Experience</p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Label Inference Attacks in Vertical Federated Learning</h3>
+          <span class="entry-date">2025 – Present</span>
+        </div>
+        <p class="entry-sub">Undergraduate Thesis · BUET <span class="muted">(Supervisor: [Name])</span></p>
+        <ul>
+          <li>Investigating security vulnerabilities in Vertical Federated Learning (VFL) under semi-honest participants, focusing on <strong>label inference</strong> and <strong>gradient inversion</strong> attacks.</li>
+          <li>Developed <strong>SBEA</strong>, an attack exploiting set bias in entity alignment for label inference and model extraction; manuscript submitted to <em>IJCAI 2026</em>.</li>
+          <li>Designing and evaluating defenses that preserve label privacy while maintaining model utility.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Machine Unlearning in Vertical Federated Learning</h3>
+          <span class="entry-date">2026 – Present</span>
+        </div>
+        <p class="entry-sub">Independent Research · BUET</p>
+        <ul>
+          <li>Studying <strong>machine unlearning</strong> in the VFL setting, where feature partitioning across parties makes standard (horizontal) unlearning methods inapplicable.</li>
+          <li>Establishing a <strong>standardized evaluation metric and benchmark protocol</strong> that quantifies unlearning completeness, residual information leakage, and post-unlearning utility.</li>
+          <li>Benchmarking retraining, gradient-based, and approximate unlearning strategies for fair, reproducible comparison across VFL architectures.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Simulation-Based Testing of Autonomous Vehicles</h3>
+          <span class="entry-date">2024 – Present</span>
+        </div>
+        <p class="entry-sub">Voluntary Research · BUET × Cal Poly × UC Santa Cruz</p>
+        <ul>
+          <li>Enhancing the reliability of simulation-based testing frameworks for autonomous vehicles, in collaboration with BUET, California Polytechnic State University, and UC Santa Cruz.</li>
+          <li>Developing <strong>metrics for the diversity and realism of pedestrian trajectories</strong> so test scenarios better reflect real-world behavior.</li>
+          <li>Built and deployed a public <a href="#" target="_blank" rel="noopener">trajectory annotation website</a> to collect human realism judgments for metric validation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <p class="eyebrow">Publications &amp; Manuscripts</p>
+
+      <div class="pub">
+        <div class="pub-num">[1]</div>
+        <div>
+          <div class="pub-title">SBEA: Exploiting Set Bias in Entity Alignment for Label Inference and Model Extraction in Vertical Federated Learning <span class="badge">Under review</span></div>
+          <div class="pub-meta"><strong>F. Mubashwera</strong>, et al. — Submitted to <span class="venue">IJCAI 2026</span>.</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">[2]</div>
+        <div>
+          <div class="pub-title">Understanding Gendered Stereotype in Large Language Models: A Mini Review on Biasing and Debiasing Techniques <span class="badge">Under review</span></div>
+          <div class="pub-meta"><strong>F. Mubashwera</strong>, et al. — Submitted to <span class="venue">Frontiers in Artificial Intelligence</span>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <p class="eyebrow">Selected Projects</p>
+      <div class="grid">
+        <div class="proj">
+          <h3>Trajectory Annotation Platform</h3>
+          <p>Web platform for crowdsourced annotation of pedestrian-trajectory realism, supporting the AV simulation-testing collaboration.</p>
+          <span class="tag">ReactJS · Flask · PostgreSQL</span>
+        </div>
+        <div class="proj">
+          <h3>AI Cheque Fraud Detection</h3>
+          <p>Cheque-transaction processing and fraud-detection system for low-tier banks in Bangladesh.</p>
+          <span class="tag"><span class="award">Finalist &amp; Hon. Mention, Solvio AI Hackathon 2025</span> · Python · PyTorch</span>
+        </div>
+        <div class="proj">
+          <h3>MotherGPT</h3>
+          <p>Maternal-health web app offering AI-assisted health monitoring and personalized care guidance.</p>
+          <span class="tag"><span class="award">Finalist, Dhaka Divisional Hackathon 2024</span> · NLP · Flask</span>
+        </div>
+        <div class="proj">
+          <h3>Dhaka Congestion Mobility</h3>
+          <p>An innovative transportation solution addressing Dhaka's urban congestion problem.</p>
+          <span class="tag"><span class="award">Finalist (Top 6), Honda Int'l Symposium 2025</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <p class="eyebrow">Education</p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Bangladesh University of Engineering &amp; Technology (BUET)</h3>
+          <span class="entry-date">Jan 2022 – Jun 2026</span>
+        </div>
+        <p class="entry-sub">B.Sc. in Computer Science &amp; Engineering <span class="muted">— CGPA 3.94 / 4.00</span></p>
+        <p>Thesis: <em>Security Vulnerabilities in Vertical Federated Learning — Label Inference Attacks and Defenses.</em> Consistently high term performance across all eight terms (GPA range 3.86–3.99).</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <p class="eyebrow">Professional &amp; Teaching Experience</p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Lecturer, Computer Science &amp; Engineering</h3>
+          <span class="entry-date">Jun 2026 – Present</span>
+        </div>
+        <p class="entry-sub">Presidency University · Dhaka</p>
+        <p>Teaching undergraduate CSE courses and mentoring students on coursework and research.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">AI Research Intern</h3>
+          <span class="entry-date">Jan 2026 – Jun 2026</span>
+        </div>
+        <p class="entry-sub">EliteResearchLab LLC · Remote</p>
+        <p>Worked on fairness auditing and bias-mitigation techniques to improve model transparency and interpretability.</p>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <p class="eyebrow">Honors &amp; Awards</p>
+      <ul class="awards">
+        <li><span class="yr">2024</span><span><strong>Honda Young Engineer &amp; Scientist's (Y-E-S) Award</strong> — Honda Foundation, Japan, recognizing outstanding undergraduates in science and engineering.</span></li>
+        <li><span class="yr">2025</span><span><strong>Finalist (Top 6)</strong>, Honda International Symposium on Transportation and Vehicle.</span></li>
+        <li><span class="yr">2024</span><span><strong>Champion, Poster Presentation</strong> — BUET CSE Fest.</span></li>
+        <li><span class="yr">2025</span><span><strong>Finalist &amp; Honourable Mention</strong> — Solvio AI Hackathon.</span></li>
+        <li><span class="yr">2023</span><span><strong>Finalist</strong>, Hult Prize at BUET; <strong>Breaking Team</strong>, United Asian Debating Championship (UADC).</span></li>
+      </ul>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service">
+      <p class="eyebrow">Leadership &amp; Academic Service</p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">General Secretary — BUET Debating Club</h3>
+          <span class="entry-date">May 2025 – Present</span>
+        </div>
+        <p>Organized national-scale tournaments; led workshops on policy advocacy and public speaking; trained debaters across school, college, and university levels.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Executive Member — Bangladesh Women in CSE (BWCSE)</h3>
+          <span class="entry-date">Jan 2023 – Present</span>
+        </div>
+        <p>Promote women's participation and leadership in CSE through events, mentorship, and outreach.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="eyebrow">Contact</p>
+      <p>The fastest way to reach me is by email at <a href="mailto:mubashwerafairuz@gmail.com">mubashwerafairuz@gmail.com</a>. I welcome inquiries about research collaboration, PhD opportunities, and student supervision. You can also connect on <a href="https://linkedin.com/in/Fairuz" target="_blank" rel="noopener">LinkedIn</a> or view my code on <a href="https://github.com/Fairuz" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span>© <span id="yr"></span> Fairuz Mubashwera. Built with HTML &amp; CSS, hosted on GitHub Pages.</span>
+  <span><a href="#about">Back to top ↑</a></span>
+</footer>
+</div>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
