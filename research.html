@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Fairuz Mubashwera</title>
+  <meta name="description" content="Research by Fairuz Mubashwera: Vertical Federated Learning security, machine unlearning, and autonomous-vehicle simulation testing.">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">FM</span>
+      <span class="logo-name">Fairuz Mubashwera</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cv-btn" href="cv.pdf" download>↓ CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="page-hero-eyebrow">Academic Work</p>
+      <h1 class="page-hero-title">Research</h1>
+      <p class="page-hero-sub">
+        Studying how machine-learning systems can be made trustworthy when data is private,
+        distributed, and safety-critical.
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- ===== RESEARCH INTERESTS ===== -->
+    <section class="section" data-anim>
+      <p class="section-eyebrow">Focus Areas</p>
+      <h2 class="section-title">Research Interests</h2>
+      <p class="section-sub">
+        My work spans privacy-preserving machine learning, federated systems security, and
+        reliable autonomous systems. Below are the active threads.
+      </p>
+      <div class="chips">
+        <span class="chip">Vertical Federated Learning</span>
+        <span class="chip">Privacy &amp; Security in ML</span>
+        <span class="chip">Label Inference Attacks</span>
+        <span class="chip">Gradient Inversion</span>
+        <span class="chip">Machine Unlearning</span>
+        <span class="chip">Trustworthy AI</span>
+        <span class="chip">Autonomous-Vehicle Testing</span>
+        <span class="chip">Simulation &amp; Robustness</span>
+        <span class="chip">Gender Bias in LLMs</span>
+        <span class="chip">Fairness &amp; Interpretability</span>
+      </div>
+    </section>
+
+    <!-- ===== RESEARCH PHILOSOPHY ===== -->
+    <section class="section" data-anim>
+      <p class="section-eyebrow">Motivation</p>
+      <h2 class="section-title">Research Philosophy</h2>
+      <p>
+        I am drawn to problems at the boundary of technical rigour and real-world consequence.
+        Data-collaborative learning is reshaping how AI is built across organisations and
+        jurisdictions — yet the privacy contracts it implies are rarely made explicit, let alone
+        enforced. I want to close that gap.
+      </p>
+      <p>
+        Similarly, as autonomous systems move into public spaces, the gap between simulation
+        performance and real-world behaviour can be life-critical. Building better evaluation
+        infrastructure for these systems is as important as improving the models themselves.
+      </p>
+      <!-- ↓ ADD MORE CONTEXT OR A LONGER RESEARCH STATEMENT HERE -->
+    </section>
+
+    <!-- ===== CURRENT RESEARCH ===== -->
+    <section class="section" data-anim>
+      <p class="section-eyebrow">Active Work</p>
+      <h2 class="section-title">Research Projects</h2>
+
+      <!-- PROJECT 1 -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Label Inference Attacks in Vertical Federated Learning</h3>
+          <span class="entry-date">2025 – Present</span>
+        </div>
+        <p class="entry-sub">
+          Undergraduate Thesis · BUET
+          <span class="muted"> — Supervisor: Dr. Muhammad Abdullah Adnan</span>
+        </p>
+        <ul>
+          <li>
+            Investigating security vulnerabilities in Vertical Federated Learning (VFL) under
+            semi-honest participants, focusing on <strong>label inference</strong> and
+            <strong>gradient inversion</strong> attacks.
+          </li>
+          <li>
+            Developed <strong>SBEA</strong>, a novel attack exploiting set bias in entity
+            alignment for label inference and model extraction; manuscript submitted to
+            <em>IJCAI 2026</em>.
+          </li>
+          <li>
+            Designing and evaluating defences that preserve label privacy while maintaining
+            model utility across realistic VFL architectures.
+          </li>
+        </ul>
+        <!-- ↓ ADD MORE BULLET POINTS OR EXTENDED DESCRIPTION HERE -->
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Machine Unlearning in Vertical Federated Learning</h3>
+          <span class="entry-date">2026 – Present</span>
+        </div>
+        <p class="entry-sub">Independent Research · BUET</p>
+        <ul>
+          <li>
+            Studying <strong>machine unlearning</strong> in the VFL setting, where feature
+            partitioning across parties makes standard (horizontal) unlearning methods
+            inapplicable.
+          </li>
+          <li>
+            Establishing a <strong>standardised evaluation metric and benchmark protocol</strong>
+            that quantifies unlearning completeness, residual information leakage, and
+            post-unlearning utility.
+          </li>
+          <li>
+            Benchmarking retraining, gradient-based, and approximate unlearning strategies for
+            fair, reproducible comparison across VFL architectures.
+          </li>
+        </ul>
+        <!-- ↓ ADD MORE BULLET POINTS OR EXTENDED DESCRIPTION HERE -->
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Simulation-Based Testing of Autonomous Vehicles</h3>
+          <span class="entry-date">2024 – Present</span>
+        </div>
+        <p class="entry-sub">
+          Voluntary Research · BUET × Cal Poly × UC Santa Cruz
+        </p>
+        <ul>
+          <li>
+            Enhancing the reliability of simulation-based testing frameworks for autonomous
+            vehicles, in collaboration with BUET, California Polytechnic State University, and
+            UC Santa Cruz.
+          </li>
+          <li>
+            Developing <strong>metrics for the diversity and realism of pedestrian
+            trajectories</strong> so test scenarios better reflect real-world behaviour.
+          </li>
+          <li>
+            Built and deployed a public
+            <a href="https://motiontagger.com/" target="_blank" rel="noopener">trajectory annotation website</a>
+            to collect human realism judgements for metric validation.
+          </li>
+        </ul>
+        <!-- ↓ ADD MORE BULLET POINTS OR EXTENDED DESCRIPTION HERE -->
+      </div>
+
+      <!-- PROJECT 4 — AI BIAS -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Gender Stereotype in Large Language Models</h3>
+          <span class="entry-date">2025 – Present</span>
+        </div>
+        <p class="entry-sub">Research · EliteResearchLab LLC</p>
+        <ul>
+          <li>
+            Mini-review investigating how gender stereotypes are encoded and propagated in
+            contemporary LLMs, and evaluating both biasing and debiasing techniques.
+          </li>
+          <li>
+            Manuscript submitted to <em>Frontiers in Artificial Intelligence</em>.
+          </li>
+        </ul>
+        <!-- ↓ ADD MORE BULLET POINTS OR EXTENDED DESCRIPTION HERE -->
+      </div>
+
+      <!-- ↓ ADD NEW RESEARCH ENTRY BELOW — copy the .entry block above as a template -->
+
+    </section>
+
+    <!-- ===== COLLABORATIONS ===== -->
+    <section class="section" data-anim>
+      <p class="section-eyebrow">Network</p>
+      <h2 class="section-title">Collaborations &amp; Affiliations</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Bangladesh University of Engineering &amp; Technology (BUET)</h3>
+        </div>
+        <p class="entry-sub">Primary Research Institution</p>
+        <p>
+          Home institution for thesis research under the supervision of Dr. Muhammad Abdullah Adnan
+          (CSE Department). <!-- ADD FURTHER DETAILS ABOUT THE LAB / GROUP -->
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Cal Poly × UC Santa Cruz Collaboration</h3>
+        </div>
+        <p class="entry-sub">AV Simulation Testing Project</p>
+        <p>
+          International research collaboration on autonomous vehicle testing methodology.
+          <!-- ADD SUPERVISOR NAMES, GRANT DETAILS, OR FURTHER CONTEXT -->
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">EliteResearchLab LLC</h3>
+        </div>
+        <p class="entry-sub">AI Research Internship · Jan 2026 – Jun 2026 (Remote)</p>
+        <p>
+          Fairness auditing and bias-mitigation work in LLMs.
+          <!-- ADD FURTHER DETAILS -->
+        </p>
+      </div>
+
+      <!-- ↓ ADD NEW COLLABORATION BELOW -->
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section" style="border-top:1px solid var(--rule);text-align:center;" data-anim>
+      <p class="section-eyebrow">Output</p>
+      <h2 class="section-title">See the Publications</h2>
+      <p style="color:var(--ink-soft);max-width:480px;margin:0 auto 28px;">
+        Papers and manuscripts arising from this research are listed on the publications page,
+        including submission status and links.
+      </p>
+      <a href="publications.html" class="btn btn-primary">View Publications →</a>
+    </section>
+
+  </div><!-- /wrap -->
+</div><!-- /page -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-copy">© <span id="yr"></span> Fairuz Mubashwera · Lecturer, CSE · Presidency University</span>
+    <div class="footer-links">
+      <a href="mailto:mubashwerafairuz@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/fairuz-mubashwera-bb6aa92b9/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/SabaJhim" target="_blank" rel="noopener">GitHub</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => { toggle.classList.toggle('active'); mobile.classList.toggle('open'); });
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('active'); mobile.classList.remove('open'); }));
+  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }}); }, {threshold:0.08});
+  document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
